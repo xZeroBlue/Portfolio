@@ -1,0 +1,192 @@
+/* ==========================================================
+   Deividas Banevicius – portfolio stylesheet
+   Palette taken from a green solder-mask PCB with copper traces.
+   ========================================================== */
+
+:root {
+  --bg: #0d2b25;
+  --panel: #0a211c;
+  --panel-2: #113630;
+  --line: #24493f;
+  --text: #e9efe6;
+  --muted: #a3bbb0;
+  --cu: #e0a95f;      /* copper */
+  --trace: #ffc46b;   /* bright trace / focus */
+  --radius: 6px;
+  --max: 1040px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 1.05rem/1.65 "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+}
+img { max-width: 100%; height: auto; display: block; }
+a { color: var(--cu); }
+a:hover { color: var(--trace); }
+a:focus-visible, button:focus-visible, summary:focus-visible {
+  outline: 3px solid var(--trace);
+  outline-offset: 3px;
+}
+
+.skip {
+  position: absolute; left: -999px; top: 8px;
+  background: var(--cu); color: #1b1408; padding: 8px 14px; border-radius: 4px; z-index: 10;
+}
+.skip:focus { left: 12px; }
+
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 22px; }
+
+/* ---------- Site header / navigation ---------- */
+.site-header {
+  position: sticky; top: 0; z-index: 5;
+  background: rgba(13, 43, 37, .92);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--line);
+}
+.site-header .wrap {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 16px; min-height: 62px; flex-wrap: wrap;
+}
+.brand {
+  font: 700 1.15rem/1 Georgia, "Times New Roman", serif;
+  color: var(--text); text-decoration: none;
+}
+.brand span { color: var(--cu); }
+.nav { display: flex; gap: 4px; flex-wrap: wrap; margin: 0; padding: 0; list-style: none; }
+.nav a {
+  display: block; padding: 7px 12px; border-radius: 4px;
+  color: var(--muted); text-decoration: none; font-size: .97rem;
+}
+.nav a:hover { color: var(--text); background: var(--panel-2); }
+.nav a[aria-current="page"] { color: var(--cu); background: var(--panel); }
+
+/* ---------- Typography ---------- */
+h1, .display {
+  font: 700 clamp(2.3rem, 6.5vw, 4rem)/1.06 Georgia, "Times New Roman", serif;
+  letter-spacing: -.01em; margin: 0 0 14px;
+}
+h2 { font-size: 1.5rem; line-height: 1.25; margin: 0 0 14px; }
+h3 { font-size: 1.15rem; margin: 0 0 4px; }
+p  { margin: 0 0 12px; max-width: 42rem; }
+ul, ol { margin: 6px 0 14px; padding-left: 1.2rem; max-width: 42rem; }
+li { margin-bottom: 5px; }
+.lead { color: var(--muted); font-size: 1.2rem; max-width: 40rem; margin-bottom: 24px; }
+.eyebrow {
+  color: var(--cu); font-size: .85rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: .12em; margin: 0 0 10px;
+}
+.meta { color: var(--muted); font-size: .95rem; margin: 0 0 8px; }
+.muted { color: var(--muted); }
+
+/* ---------- Layout blocks ---------- */
+.hero { padding: 64px 0 40px; }
+.page-head { padding: 56px 0 28px; border-bottom: 1px solid var(--line); }
+.section { padding: 44px 0; border-top: 1px solid var(--line); }
+.section:first-of-type { border-top: 0; }
+.row { display: grid; grid-template-columns: 200px 1fr; gap: 28px; }
+.row > h2 { font-size: 1.05rem; color: var(--cu); font-weight: 600; }
+
+.cta { display: flex; gap: 12px; flex-wrap: wrap; }
+.btn {
+  display: inline-block; padding: 10px 20px; border-radius: 4px;
+  border: 1.5px solid var(--cu); text-decoration: none; font-weight: 600; color: var(--cu);
+}
+.btn:hover { background: var(--panel); }
+.btn.p { background: var(--cu); color: #1b1408; }
+.btn.p:hover { background: var(--trace); border-color: var(--trace); color: #1b1408; }
+
+/* ---------- Cards ---------- */
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 18px; }
+.card {
+  display: flex; flex-direction: column;
+  background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 22px; text-decoration: none; color: var(--text);
+  transition: border-color .15s ease-out, transform .15s ease-out;
+}
+a.card:hover { border-color: var(--cu); transform: translateY(-2px); }
+.card p { color: var(--muted); font-size: .98rem; }
+.card .more { margin-top: auto; color: var(--cu); font-weight: 600; font-size: .95rem; }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 4px 0 12px; padding: 0; list-style: none; }
+.tags li {
+  margin: 0; font-size: .8rem; padding: 2px 10px; border-radius: 999px;
+  border: 1px solid var(--line); color: var(--muted);
+}
+
+/* ---------- Stats strip ---------- */
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 14px; margin: 26px 0 0; }
+.stat { border-left: 3px solid var(--cu); padding: 4px 0 4px 14px; }
+.stat b { display: block; font: 700 1.6rem/1.1 Georgia, serif; color: var(--text); }
+.stat span { color: var(--muted); font-size: .92rem; }
+
+/* ---------- Oscilloscope ---------- */
+.scope { margin: 28px 0 0; border: 1px solid var(--line); border-radius: var(--radius); background: var(--panel); overflow: hidden; }
+#scope { display: block; width: 100%; height: 220px; }
+.sw { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; padding: 12px 14px; border-top: 1px solid var(--line); }
+.sw span { color: var(--muted); font-size: .92rem; margin-right: 6px; }
+.sw button {
+  font: inherit; font-size: .95rem; padding: 6px 14px; border-radius: 999px;
+  border: 1px solid var(--line); background: transparent; color: var(--text); cursor: pointer;
+}
+.sw button[aria-pressed="true"] { background: var(--cu); border-color: var(--cu); color: #1b1408; font-weight: 600; }
+.note { color: var(--muted); font-size: .85rem; margin: 8px 0 0; }
+
+/* ---------- Case study pages ---------- */
+.facts {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px;
+  background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 18px 20px; margin: 26px 0 0;
+}
+.facts dt { color: var(--muted); font-size: .85rem; text-transform: uppercase; letter-spacing: .08em; }
+.facts dd { margin: 2px 0 0; font-weight: 600; }
+.callout {
+  border-left: 3px solid var(--cu); background: var(--panel);
+  padding: 14px 18px; border-radius: 0 var(--radius) var(--radius) 0; margin: 18px 0; max-width: 42rem;
+}
+.callout p:last-child { margin: 0; }
+.pager { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; padding: 30px 0 10px; }
+
+/* Signal-flow diagram (speaker project) */
+.flow { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: 18px 0; list-style: none; padding: 0; max-width: none; }
+.flow li {
+  margin: 0; background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 10px 14px; font-size: .95rem;
+}
+.flow li.arrow { background: none; border: 0; padding: 0; color: var(--cu); font-weight: 700; }
+
+/* ---------- Definition lists (skills) ---------- */
+.skills { margin: 0; display: grid; grid-template-columns: 170px 1fr; gap: 10px 20px; }
+.skills dt { color: var(--muted); }
+.skills dd { margin: 0; }
+
+/* ---------- Timeline (experience / education) ---------- */
+.timeline { list-style: none; padding: 0; margin: 0; max-width: none; }
+.timeline > li { position: relative; padding: 0 0 30px 26px; border-left: 2px solid var(--line); margin: 0; }
+.timeline > li:last-child { padding-bottom: 0; }
+.timeline > li::before {
+  content: ""; position: absolute; left: -7px; top: 6px; width: 12px; height: 12px;
+  border-radius: 50%; background: var(--bg); border: 2px solid var(--cu);
+}
+
+/* ---------- Footer ---------- */
+.site-footer { border-top: 1px solid var(--line); padding: 30px 0 50px; color: var(--muted); margin-top: 40px; font-size: .95rem; }
+.site-footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.site-footer ul { list-style: none; display: flex; gap: 16px; padding: 0; margin: 0; }
+
+@media (max-width: 720px) {
+  .row { grid-template-columns: 1fr; gap: 10px; }
+  .skills { grid-template-columns: 1fr; gap: 0; }
+  .skills dt { margin-top: 12px; }
+  .hero { padding-top: 40px; }
+  .site-header { position: static; }
+  .site-header .wrap { padding-top: 10px; padding-bottom: 6px; }
+  .nav a { padding: 6px 10px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
+}

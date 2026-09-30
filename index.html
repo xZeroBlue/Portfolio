@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Deividas Banevicius – Electrical &amp; Electronic Engineer</title>
+  <meta name="description" content="Portfolio of Deividas Banevicius, BEng Electrical and Electronic Engineering graduate focused on automation, controls and embedded systems.">
+  <meta name="author" content="Deividas Banevicius">
+  <meta property="og:title" content="Deividas Banevicius – Electrical &amp; Electronic Engineer">
+  <meta property="og:description" content="Portfolio of Deividas Banevicius, BEng Electrical and Electronic Engineering graduate focused on automation, controls and embedded systems.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#0d2b25">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html">Deividas <span>Banevicius</span></a>
+      <nav aria-label="Main">
+        <ul class="nav">
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="experience.html">Experience</a></li>
+        <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="wrap">
+      <section class="hero">
+        <p class="eyebrow">BEng (Hons) Electrical &amp; Electronic Engineering · 2:1</p>
+        <h1>Deividas Banevicius</h1>
+        <p class="lead">An electrical and electronic engineering graduate who builds working hardware and software together, from Verilog on an FPGA to a wireless audio system designed from scratch. I'm looking for my first role in industrial automation, control systems or embedded engineering.</p>
+        <div class="cta">
+          <a class="btn p" href="Deividas_Banevicius_CV.pdf" download>Download my CV</a>
+          <a class="btn" href="projects.html">See my projects</a>
+          <a class="btn" href="mailto:dbanevicius04@gmail.com">Email me</a>
+        </div>
+
+        <div class="stats">
+          <div class="stat"><b>&lt; 100 ms</b><span>real-time wireless audio latency</span></div>
+          <div class="stat"><b>2:1</b><span>BEng (Hons), Manchester Met</span></div>
+          <div class="stat"><b>5.5 t</b><span>diesel forklift diagnosed and repaired</span></div>
+          <div class="stat"><b>3 sensors</b><span>interfaced to an FPGA in Verilog</span></div>
+        </div>
+
+        <div class="scope">
+          <canvas id="scope" role="img" aria-label="Oscilloscope trace of a sine wave"></canvas>
+          <div class="sw" role="group" aria-label="Choose a waveform"><span>Select a waveform, like the switches on my FPGA board:</span></div>
+        </div>
+        <p class="note">An illustrative take on the four switch-selectable waveforms I generated on a DE10-Lite FPGA.</p>
+      </section>
+
+      <section class="section">
+        <p class="eyebrow">Featured work</p>
+        <h2>Projects</h2>
+        <div class="grid">
+          <a class="card" href="speaker-system.html">
+            <h3>Wireless surround speaker system</h3>
+            <ul class="tags"><li>C++</li><li>Hardware</li><li>Networking</li></ul>
+            <p>Final-year project: speakers, circuits and a C++ server-based streaming system, built from scratch with under 100 ms latency.</p>
+            <span class="more">Read the case study →</span>
+          </a>
+          <a class="card" href="fpga.html">
+            <h3>FPGA &amp; digital electronics</h3>
+            <ul class="tags"><li>Verilog</li><li>Quartus</li><li>ModelSim</li></ul>
+            <p>An arithmetic processing unit from logic gates, three sensors interfaced to a DE10-Lite, and an oscilloscope-verified waveform generator.</p>
+            <span class="more">Read the case study →</span>
+          </a>
+          <a class="card" href="projects.html#personal">
+            <h3>PCB design &amp; software</h3>
+            <ul class="tags"><li>KiCad</li><li>Python</li><li>AutoHotkey</li></ul>
+            <p>A custom step-down converter PCB, a 2D raycasting engine in Python and scripts that automate everyday tasks.</p>
+            <span class="more">See personal projects →</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="section row">
+        <h2>What I bring</h2>
+        <div>
+          <p><strong>Design to working hardware.</strong> I'm comfortable taking a system from a blank page to a tested build: simulate first, implement, then verify on the bench with an oscilloscope.</p>
+          <p><strong>Real-world fault finding.</strong> My technician work means tracing electrical, electronic and hydraulic faults on vehicles and industrial machinery back to their root cause, not just replacing parts.</p>
+          <p><strong>Software alongside electronics.</strong> C++, Verilog and Python, with Git for version control. This site itself is kept in a GitHub repository and deployed with GitHub Pages.</p>
+          <p><a href="about.html">More about me and my skills →</a></p>
+        </div>
+      </section>
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Birmingham, UK · <a href="mailto:dbanevicius04@gmail.com">dbanevicius04@gmail.com</a> · 07884 150446</p>
+      <ul>
+        <li><a href="Deividas_Banevicius_CV.pdf">CV (PDF)</a></li>
+        <li><a href="https://github.com/YOUR-GITHUB-USERNAME/portfolio">Source on GitHub</a></li>
+      </ul>
+    </div>
+  </footer>
+  <script src="assets/js/scope.js" defer></script>
+</body>
+</html>

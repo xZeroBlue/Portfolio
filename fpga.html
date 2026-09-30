@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FPGA &amp; Digital Electronics – Deividas Banevicius</title>
+  <meta name="description" content="Verilog FPGA projects on a DE10-Lite: an arithmetic processing unit, sensor interfacing and an oscilloscope-verified waveform generator.">
+  <meta name="author" content="Deividas Banevicius">
+  <meta property="og:title" content="FPGA &amp; Digital Electronics – Deividas Banevicius">
+  <meta property="og:description" content="Verilog FPGA projects on a DE10-Lite: an arithmetic processing unit, sensor interfacing and an oscilloscope-verified waveform generator.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#0d2b25">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html">Deividas <span>Banevicius</span></a>
+      <nav aria-label="Main">
+        <ul class="nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html" aria-current="page">Projects</a></li>
+        <li><a href="experience.html">Experience</a></li>
+        <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="wrap">
+      <header class="page-head">
+        <p class="eyebrow"><a href="projects.html">Projects</a> / Second and third year</p>
+        <h1>FPGA &amp; digital electronics</h1>
+        <p class="lead">Two projects in Verilog on an Intel DE10-Lite FPGA board, going from individual logic gates up to reading real sensors and generating signals checked on an oscilloscope.</p>
+        <dl class="facts">
+          <div><dt>Language</dt><dd>Verilog HDL</dd></div>
+          <div><dt>Tools</dt><dd>Quartus Prime, ModelSim</dd></div>
+          <div><dt>Board</dt><dd>DE10-Lite</dd></div>
+          <div><dt>Verification</dt><dd>Simulation + oscilloscope</dd></div>
+        </dl>
+      </header>
+
+      <section class="section row">
+        <h2>Workflow</h2>
+        <div>
+          <p>Every design followed the same disciplined path, which is how digital hardware is developed in industry:</p>
+          <ol class="flow" aria-label="Design workflow">
+            <li>Write Verilog</li><li class="arrow" aria-hidden="true">→</li>
+            <li>Simulate in ModelSim</li><li class="arrow" aria-hidden="true">→</li>
+            <li>Synthesise in Quartus</li><li class="arrow" aria-hidden="true">→</li>
+            <li>Assign pins</li><li class="arrow" aria-hidden="true">→</li>
+            <li>Test on hardware</li>
+          </ol>
+          <p>Simulating first caught logic errors before they reached the board; testing on hardware then exposed the real-world issues, such as pin assignments, that simulation can't.</p>
+        </div>
+      </section>
+
+      <section class="section row">
+        <h2>Arithmetic processing unit</h2>
+        <div>
+          <p>I designed an arithmetic processing unit (APU) built up from logic gates, to understand how a microprocessor actually performs arithmetic and logic operations rather than treating it as a black box.</p>
+        </div>
+      </section>
+
+      <section class="section row">
+        <h2>Sensor interfacing</h2>
+        <div>
+          <p>I connected three sensors to the FPGA and turned their raw readings into values a person can read on the board's seven-segment hex displays, including alphanumeric characters:</p>
+          <ul>
+            <li><strong>ADXL345 accelerometer</strong>: measuring acceleration and tilt.</li>
+            <li><strong>Onboard gyroscope</strong>: measuring rotation.</li>
+            <li><strong>Ultrasonic distance sensor</strong>: measuring distance in centimetres.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section row">
+        <h2>Waveform generator</h2>
+        <div>
+          <p>I generated four different waveforms, selectable with the board's switches, and checked each one's shape and timing on an oscilloscope to confirm the hardware matched the simulation. The animated trace on the <a href="index.html">home page</a> is a nod to this project.</p>
+          <!-- Add oscilloscope captures here, e.g.
+               <img src="assets/img/scope-square.jpg" alt="Oscilloscope capture of the square wave output"> -->
+        </div>
+      </section>
+
+      <nav class="pager" aria-label="Case studies">
+        <a href="speaker-system.html">← Previous: Wireless speaker system</a>
+        <a href="projects.html">All projects →</a>
+      </nav>
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Birmingham, UK · <a href="mailto:dbanevicius04@gmail.com">dbanevicius04@gmail.com</a> · 07884 150446</p>
+      <ul>
+        <li><a href="Deividas_Banevicius_CV.pdf">CV (PDF)</a></li>
+        <li><a href="https://github.com/YOUR-GITHUB-USERNAME/portfolio">Source on GitHub</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>
